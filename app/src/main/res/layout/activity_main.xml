@@ -10,8 +10,15 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         android:orientation="vertical">
+
         <include
-            layout="@layout/layout_top_navigation_view"/>
+            layout="@layout/layout_top_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp" />
         <FrameLayout
             android:id="@+id/card_frame"
             android:layout_width="match_parent"
@@ -31,11 +38,12 @@
                     android:layout_weight="1"
                     android:background="@drawable/rounded_corner_layout"
                     android:orientation="vertical">
+
                     <com.lorentzos.flingswipe.SwipeFlingAdapterView
                         android:id="@+id/frame"
                         android:layout_width="match_parent"
-                        android:layout_height="145dp"
-                        android:layout_weight="1"
+                        android:layout_height="567dp"
+
                         android:background="@color/white"
                         app:rotation_degrees="15.5" />
                 </LinearLayout>
