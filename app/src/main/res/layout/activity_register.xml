@@ -112,11 +112,12 @@
                         android:orientation="horizontal"
                         >
                         <CheckBox
-                            android:id="@+id/Textview2"
+                            android:id="@+id/checkbox1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="CheckBox"/>
                         <TextView
+                            android:id="@+id/Textview2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="TextView"
