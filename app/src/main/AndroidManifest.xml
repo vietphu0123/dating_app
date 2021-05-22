@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MatchesActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".BtnDisLikeActivity" />
+        <activity android:name=".BtnLikeActivity" />
+        <activity android:name=".MatchesActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".MainActivity" />
