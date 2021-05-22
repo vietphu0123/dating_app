@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1082012546528",
+    "firebase_url": "https://dating-app-60ca7-default-rtdb.firebaseio.com",
+    "project_id": "dating-app-60ca7",
+    "storage_bucket": "dating-app-60ca7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082012546528:android:dfaff8e27db8350b112785",
+        "android_client_info": {
+          "package_name": "com.example.datingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082012546528-9mlm69nsrt4dnpf9pui48ocenjvbpgdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo01DtzvBcPtLCQZdOg84gtHLf-FKEDCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082012546528-9mlm69nsrt4dnpf9pui48ocenjvbpgdm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082012546528:android:54e9d0d322238be5112785",
+        "android_client_info": {
+          "package_name": "com.sohan.package"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082012546528-9mlm69nsrt4dnpf9pui48ocenjvbpgdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo01DtzvBcPtLCQZdOg84gtHLf-FKEDCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082012546528-9mlm69nsrt4dnpf9pui48ocenjvbpgdm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
