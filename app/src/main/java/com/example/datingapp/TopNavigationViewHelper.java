@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 
+import com.example.datingapp.Matches.MatchesActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -29,7 +30,7 @@ public class TopNavigationViewHelper {
                         break;
 
                     case R.id.ic_matched:
-                        Intent j=new Intent(context,MatchesActivity.class);
+                        Intent j=new Intent(context, MatchesActivity.class);
                         context.startActivity(j);
                         break;
                 }

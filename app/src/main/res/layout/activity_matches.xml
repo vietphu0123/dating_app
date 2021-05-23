@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MatchesActivity"
-    android:orientation="vertical"
-    >
+    tools:context=".Matches.MatchesActivity"
+    android:orientation="vertical">
     <include
         android:id="@+id/matchesToolbar"
         layout="@layout/toolbar_matches"/>
@@ -18,8 +17,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/recyclerview"
+            android:id="@+id/recyclerView"
             android:scrollbars="vertical"/>
     </ScrollView>
-
 </LinearLayout>
