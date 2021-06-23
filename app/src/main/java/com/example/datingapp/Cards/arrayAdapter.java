@@ -74,8 +74,5 @@ public class arrayAdapter extends ArrayAdapter<cards> {
 
         }
         return convertView;
-
-
-
     }
 }

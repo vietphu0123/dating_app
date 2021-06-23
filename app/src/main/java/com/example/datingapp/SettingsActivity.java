@@ -103,6 +103,7 @@ public class SettingsActivity extends AppCompatActivity {
         getUserInfo();
 
         mProfileImage.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 if(!checkPermission())
@@ -117,11 +118,13 @@ public class SettingsActivity extends AppCompatActivity {
                     startActivityForResult(intent,1);
                 }
 
+
             }
         });
         mConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                saveUserImformation();
                 Intent intent = new Intent(SettingsActivity.this,MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -220,7 +223,7 @@ public class SettingsActivity extends AppCompatActivity {
     {
         mUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange( DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists() && dataSnapshot.getChildrenCount()>0)
                 {
                     Map<String,Object> map=(Map<String, Object>) dataSnapshot.getValue();
@@ -228,6 +231,9 @@ public class SettingsActivity extends AppCompatActivity {
                     {
                         name=map.get("name").toString();
                         mNameField.setText(name);
+                    }
+                    else{
+                        mNameField.setText("chwua có");
                     }
                     if(map.get("phone")!=null)
                     {
@@ -244,7 +250,9 @@ public class SettingsActivity extends AppCompatActivity {
                         userBudget=map.get("budget").toString();
                     }
                     else
+                        {
                         userBudget="0";
+                    }
                     if(map.get("give")!=null)
                     {
                         userGive=map.get("give").toString();
@@ -290,7 +298,7 @@ public class SettingsActivity extends AppCompatActivity {
 
 
             @Override
-            public void onCancelled( DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
@@ -303,15 +311,62 @@ public class SettingsActivity extends AppCompatActivity {
         userGive=give.getSelectedItem().toString();
         userNeed=need.getSelectedItem().toString();
 
-        Map userInfo=new HashMap();
-        userInfo.put("name",name);
-        userInfo.put("phone",phone);
-        userInfo.put("need",need);
-        userInfo.put("give",give);
-        userInfo.put("budget",userBudget);
-        mUserDatabase.updateChildren(userInfo);
+        Map nameInfo=new HashMap();
+        nameInfo.put("name",name);
+        Map phoneInfo=new HashMap();
+        phoneInfo.put("phone",phone);
+        Map needInfo=new HashMap();
+        needInfo.put("need",userNeed);
+        Map giveInfo=new HashMap();
+        giveInfo.put("give",userGive);
+        Map budgetInfo=new HashMap();
+        budgetInfo.put("budget",userBudget);
+
+        if(mUserDatabase.child("name")!=null){
+            mUserDatabase.updateChildren(nameInfo);
+        }
+        else{
+            mUserDatabase.push().setValue(nameInfo);
+        }
+        if(mUserDatabase.child("phone")!=null){
+            mUserDatabase.updateChildren(phoneInfo);
+        }
+        else{
+            mUserDatabase.push().setValue(phoneInfo);
+        }
+                if(mUserDatabase.child("need")!=null){
+                    mUserDatabase.updateChildren(needInfo);
+                }
+                else{
+                    mUserDatabase.push().setValue(needInfo);
+                }
+                if(mUserDatabase.child("give")!=null){
+                    mUserDatabase.updateChildren(giveInfo);
+                }
+                else{
+                    mUserDatabase.push().setValue(giveInfo);
+                }
+                if(mUserDatabase.child("budget")!=null){
+                    mUserDatabase.updateChildren(budgetInfo);
+                }
+                else{
+                    mUserDatabase.push().setValue(budgetInfo);
+                }
+
+
+
+
+
+//        Map userInfo=new HashMap();
+//        userInfo.put("name",name);
+//        userInfo.put("phone",phone);
+//        userInfo.put("need",need);
+//        userInfo.put("give",give);
+//        userInfo.put("budget",userBudget);
+//        mUserDatabase.updateChildren(userInfo);
         if(resultUri!=null)
         {
+            Toast.makeText(this,"thanh cong",Toast.LENGTH_SHORT).show();
             StorageReference filepath= FirebaseStorage.getInstance().getReference().child("profileImages").child(userId);
             Bitmap bitmap=null;
             try {
