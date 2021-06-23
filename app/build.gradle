@@ -14,6 +14,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders=[
+                onesignal_app_id:'8e456111-d472-4d37-b4af-912e14b591a3',
+                onesignal_google_project_number:'364680628774'
+        ]
     }
 
     buildTypes {
@@ -65,5 +69,6 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 
 
