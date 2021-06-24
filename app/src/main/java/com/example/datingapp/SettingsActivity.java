@@ -271,9 +271,9 @@ public class SettingsActivity extends AppCompatActivity {
                     for(int i=0;i<services.length;i++)
                     {
                         if(userNeed.equals(services[i]))
-                            needIndex=1;
+                            needIndex=i;
                         if(userGive.equals(services[i]))
-                            giveIndex=1;
+                            giveIndex=i;
                     }
                     need.setSelection(needIndex);
                     give.setSelection(giveIndex);

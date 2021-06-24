@@ -57,7 +57,7 @@ public class MatchesActivity extends AppCompatActivity {
         mMatchesLayoutManager = new LinearLayoutManager(MatchesActivity.this);
         mRecyclerView.setLayoutManager(mMatchesLayoutManager);
         mMatchesAdapter= new MatchesAdapter(getDatSetMatches(),MatchesActivity.this);
-
+        mRecyclerView.setAdapter(mMatchesAdapter);
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

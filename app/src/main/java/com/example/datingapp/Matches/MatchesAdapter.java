@@ -32,7 +32,7 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesViewHolders> {
         layoutView.setLayoutParams(lp);
         MatchesViewHolders rcv= new MatchesViewHolders(layoutView);
 
-        return null;
+        return rcv;
     }
 
     @Override
