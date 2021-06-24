@@ -180,9 +180,9 @@ public class ChatActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.chat_menu,menu);
-        TextView mMatchNameTextView= (TextView) findViewById(R.id.chatToolbar);
+        TextView mMatchNameTextView=(TextView)findViewById(R.id.nameMatchChat);
         mMatchNameTextView.setText(matchName);
-        return  true;
+        return true;
     }
     public void showProfile(View v) {
         LayoutInflater inflater= (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -267,7 +267,7 @@ public class ChatActivity extends AppCompatActivity {
                     .setIcon(android.R.drawable.ic_dialog_alert).show();
         }
         else if(item.getItemId()==R.id.viewProfile) {
-            showProfile(findViewById(R.id.content));
+            showProfile(findViewById(android.R.id.content));
 
         }
         return super.onOptionsItemSelected(item);
